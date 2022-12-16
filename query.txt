@@ -1,0 +1,52 @@
+Esercizio db.university
+
+1 
+SELECT `name`,`surname`
+FROM `students`
+WHERE YEAR(`date_of_birth`) = 1990;
+
+——————————————————————
+2
+SELECT `name`
+FROM `courses`
+WHERE `cfu` > 10;
+
+—————————————————————
+3
+
+SELECT `name`,`date_of_birth`
+FROM `students`
+WHERE YEAR(CURDATE()) - YEAR(`date_of_birth`) >= 30
+
+
+—————————————————————
+4
+SELECT `name`,`period`,`year`
+FROM `courses`
+WHERE `period`= 'I semestre'
+AND `year` = 1
+
+—————————————————————
+5
+SELECT  *
+FROM `exams` 
+WHERE `hour` > TIME("14:00:00")
+AND `date` = DATE("2020-06-20")
+
+—————————————————————
+6
+SELECT `name`
+FROM `degrees`
+WHERE `level` = 'magistrale'
+
+—————————————————————
+7
+
+SELECT COUNT(*) AS `n_departments`
+FROM `departments`;
+
+—————————————————————
+8
+SELECT `name`
+FROM `teachers`
+WHERE `phone` IS NULL
