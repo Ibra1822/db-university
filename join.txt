@@ -21,12 +21,11 @@ WHERE `teachers`.`name` = 'Fulvio'
 AND `teachers`.`surname` = 'Amato'
 -------------------
 4
-SELECT `students`.`surname`,`students`.`name`,`degrees`.`name`, `departments`.`name`
+SELECT `students`.`surname`,`students`.`name`,`degrees`.`name` AS `corso`, `departments`.`name` as `dipartimento`
 FROM `students`
 JOIN `degrees` ON `students`.`degree_id` = `degrees`.`id`
 JOIN `departments`ON `degrees`.`department_id` = `departments`.`id`
-WHERE `students`.`name` LIKE '%'
-ORDER BY `students`.`surname`
+ORDER BY `surname`
 -------------------
 5
 SELECT  `degrees`.`name`, `courses`.`name`, `teachers`.`name`,`teachers`.`surname`
@@ -36,7 +35,7 @@ JOIN `course_teacher` ON `courses`.`id` = `course_teacher`.`course_id`
 JOIN `teachers`ON `teachers`.`id` = `course_teacher`.`teacher_id`
 -------------------
 6
-SELECT `teachers`.`name`,`teachers`.`surname`,`departments`.`name`
+SELECT DISTINCT `teachers`.`name`,`teachers`.`surname`,`departments`.`name`
 FROM `teachers`
 JOIN `course_teacher` ON `teachers`.`id` = `course_teacher`.`teacher_id`
 JOIN `courses` ON `course_teacher`.`course_id` = `courses`.`id`

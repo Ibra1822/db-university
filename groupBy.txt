@@ -8,5 +8,14 @@ SELECT COUNT(*) AS `n_persone`, `office_address`
 FROM `teachers`
 GROUP BY `office_address`
 -----------------------
+3
+SELECT AVG(`vote`) AS `media_voto` , `student_id` AS `studente`
+FROM `exam_student`
+GROUP BY `studente`
 
-
+-----------------------
+4
+SELECT COUNT(*) AS `n_corsi` , `department_id` AS `dipartimento`
+FROM `degrees`
+GROUP BY `dipartimento`
+-----------------------
