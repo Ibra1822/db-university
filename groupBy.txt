@@ -1,0 +1,12 @@
+1
+SELECT COUNT(*) , YEAR(`enrolment_date`) AS `anno_di_isc`
+FROM `students`
+GROUP BY  `anno_di_isc`
+-----------------------
+2
+SELECT COUNT(*) AS `n_persone`, `office_address`
+FROM `teachers`
+GROUP BY `office_address`
+-----------------------
+
+
