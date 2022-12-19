@@ -1,5 +1,5 @@
 1
-SELECT `students`.`name`
+SELECT `students`.`name`, `students`.`surname`,`students`.`date_of_birth`
 FROM `students`
 JOIN `degrees` ON `students`.`degree_id` = `degrees`.`id`
 WHERE `degrees`.`name` = 'Corso di Laurea in Economia'
